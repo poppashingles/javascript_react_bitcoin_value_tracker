@@ -1,5 +1,5 @@
 import React from 'react'
-import { LineChart } from 'react-easy-chart';
+import LineChart from 'react-linechart';
 
 class DateSelector extends React.Component {
   constructor(props) {
@@ -21,22 +21,21 @@ class DateSelector extends React.Component {
   }
 
   render() {
-    var obj = this.props.dates
-    console.log(obj);
+    let obj = this.props.dates
+
+    const data = [
+        {
+            color: "steelblue",
+            points: [{x: 1, y: 2}, {x: 3, y: 5}, {x: 7, y: -3}]
+        }
+    ];
 
     return(
       <div>
         <LineChart
-          axes
-          width={400}
-          height={250}
-          data={[
-            [
-              { x: 1, y: 20 },
-              { x: 2, y: 10 },
-              { x: 3, y: 25 }
-            ]
-          ]}
+            width={600}
+            height={400}
+            data={data}
         />
 
         <ul>
@@ -45,18 +44,6 @@ class DateSelector extends React.Component {
           })}
         </ul>
       </div>
-
-      // <div>
-      //   {obj.map(function(key, value) {
-      //     return <li>{ [obj[key]] }</li>
-      //   })}
-      // </div>
-
-      // <div>
-      //   { Object.keys(obj).map(function(key) {
-      //     return <li>{ [obj[key]] }</li>
-      //   }) }
-      // </div>
     )
   }
 }
