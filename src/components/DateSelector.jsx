@@ -21,13 +21,28 @@ class DateSelector extends React.Component {
 
   render() {
     var obj = this.props.dates
+    console.log(obj);
 
     return(
       <div>
-        { Object.keys(obj).map(function(key) {
-          return <li>{ [Date(key), obj[key]] }</li>
-        }) }
+        <ul>
+          {Object.keys(obj).map(function(key) {
+              return <li>Date: {key}, Value: {obj[key]}</li>;
+          })}
+        </ul>
       </div>
+
+      // <div>
+      //   {obj.map(function(key, value) {
+      //     return <li>{ [obj[key]] }</li>
+      //   })}
+      // </div>
+
+      // <div>
+      //   { Object.keys(obj).map(function(key) {
+      //     return <li>{ [obj[key]] }</li>
+      //   }) }
+      // </div>
     )
   }
 }

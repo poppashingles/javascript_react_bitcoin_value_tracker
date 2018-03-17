@@ -28,7 +28,6 @@ class PriceIndexContainer extends React.Component {
       const jsonString = request.responseText;
       const dates = JSON.parse(jsonString)
       this.setState({ dates: dates.bpi })
-      console.log(dates.bpi);
     })
   }
 
