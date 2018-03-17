@@ -22,11 +22,11 @@ class DateSelector extends React.Component {
 
   render() {
     let obj = this.props.dates
+    console.log(obj);
 
     const data = [
         {
-            color: "steelblue",
-            points: [{x: 1, y: 2}, {x: 3, y: 5}, {x: 7, y: -3}]
+            points: [{x: 1, y: 2}, {x: 3, y: 5}]
         }
     ];
 
@@ -36,6 +36,8 @@ class DateSelector extends React.Component {
             width={600}
             height={400}
             data={data}
+            xLabel={"Date"}
+            yLabel={"Value"}
         />
 
         <ul>
