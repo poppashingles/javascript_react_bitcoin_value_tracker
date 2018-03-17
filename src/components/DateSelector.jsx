@@ -1,4 +1,5 @@
 import React from 'react'
+import { LineChart } from 'react-easy-chart';
 
 class DateSelector extends React.Component {
   constructor(props) {
@@ -25,6 +26,19 @@ class DateSelector extends React.Component {
 
     return(
       <div>
+        <LineChart
+          axes
+          width={400}
+          height={250}
+          data={[
+            [
+              { x: 1, y: 20 },
+              { x: 2, y: 10 },
+              { x: 3, y: 25 }
+            ]
+          ]}
+        />
+
         <ul>
           {Object.keys(obj).map(function(key) {
               return <li>Date: {key}, Value: {obj[key]}</li>;
